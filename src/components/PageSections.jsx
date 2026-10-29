@@ -10,7 +10,7 @@ export function Hero({ onCv }) {
 }
 
 export function About({ onCv }) {
-  return (<section id="about" className="about section"><div className="about-label"><div className="section-label">01 / THE PERSON</div><button className="text-button cv" onClick={onCv}>View my CV ↗</button></div><div><h2>A thoughtful eye.<br /><em>A curious mind.</em></h2><div className="about-columns"><p>I’m Maria Niña Grace L. Pascua, a BS Computer Science student at Holy Angel University, graduating in April 2027. I’m interested in the space where visual ideas become functional, intuitive experiences.</p><div><p>My work begins with UI/UX design and extends into software development, backend development, and AI/ML. I enjoy connecting what an experience looks like with how it works.</p></div></div></div><div className="about-stamp">BASED IN<br /><strong>Pampanga</strong><br />PHILIPPINES / GMT+8</div></section>);
+  return (<section id="about" className="about section"><div className="about-label"><div className="section-label">01 / THE PERSON</div><button className="text-button cv" onClick={onCv}>View my CV ↗</button></div><div><h2>A thoughtful eye.<br /><em>A curious mind.</em></h2><div className="about-columns"><p>I’m Maria Niña Grace L. Pascua, a BS Computer Science student at Holy Angel University, graduating in April 2027. I’m interested in the space where visual ideas become functional, intuitive experiences.</p><p>My work begins with UI/UX design and extends into software development, backend development, and AI/ML. I enjoy connecting what an experience looks like with how it works.</p></div></div><div className="about-stamp">BASED IN<br /><strong>Pampanga</strong><br />PHILIPPINES / GMT+8</div></section>);
 }
 
 export function Journey({ onCv }) {

@@ -6,3 +6,5 @@
 .cv-preview{display:block;width:100%;height:65vh;margin-top:24px;border:1px solid var(--line);background:var(--paper)}
 
 .about-label{display:flex;flex-direction:column;align-items:flex-start;gap:18px}.about-label .section-label,.about-label .text-button{margin:0}
+
+.about-columns{align-items:start;row-gap:20px}.about-columns>p{margin:0;text-align:justify;text-justify:inter-word;hyphens:auto}
