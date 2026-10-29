@@ -64,17 +64,6 @@ export function Hero() {
         <div className="hero-art">
           <div className="blue-paper">
             <span>FIELD NOTES / 001</span>
-            <p>
-              Creative
-              <br />
-              by design.
-              <br />
-              <i>
-                Technical
-                <br />
-                by nature.
-              </i>
-            </p>
           </div>
           <div className="portrait">
             <Portrait />
