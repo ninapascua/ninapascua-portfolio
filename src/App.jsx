@@ -33,6 +33,7 @@ function Header() {
         <a href="#projects">
           Selected work <sup>06</sup>
         </a>
+        <a href="#skills">The toolkit</a>
         <a href="#journey">The journey</a>
         <a className="nav-contact" href="#contact">
           Say hello ↗
