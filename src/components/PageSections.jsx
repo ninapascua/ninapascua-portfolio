@@ -230,9 +230,9 @@ export function Contact({ onCv }) {
             <em>together.</em>
           </h2>
           <p className="contact-intro">
-            Looking for UI/UX, software development, and AI/ML opportunities.
+            Looking for permanent work or internship opportunities.
           </p>
-          <span className="hand">Ready to contribute.</span>
+          <span className="hand">Ready to learn. Excited to contribute.</span>
         </div>
         <div className="postcard-address">
           <div className="postage">
