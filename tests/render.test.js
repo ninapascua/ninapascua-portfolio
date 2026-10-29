@@ -9,7 +9,7 @@ test('React renders all portfolio sections, six project entries, and the full cr
   try {
     const { default: App } = await server.ssrLoadModule('/src/App.jsx');
     const html = renderToStaticMarkup(React.createElement(App));
-    for (const section of ['main', 'home', 'about', 'projects', 'github', 'skills', 'journey', 'certifications', 'contact']) {
+    for (const section of ['main', 'home', 'about', 'projects', 'skills', 'journey', 'certifications', 'contact']) {
       assert.ok(html.includes(`id="${section}"`), `${section} renders`);
     }
     for (const name of ['AniMedika', 'Sipori', 'eLingkod', 'Truth in Tales', 'Bake &amp; Co.', 'Floralia']) {
@@ -19,7 +19,8 @@ test('React renders all portfolio sections, six project entries, and the full cr
     assert.ok(html.includes('CompTIA IT Fundamentals+'));
     assert.ok(html.includes('Director for Community Development'));
     assert.ok(html.includes('aria-label="Filter projects"'));
-    assert.ok(html.includes('View case study'));
+    assert.ok(!html.includes('id="github"'));
+    assert.ok(!html.includes('href="#github"'));
     assert.equal((html.match(/class="certificate"/g) || []).length, 11);
     assert.equal((html.match(/Verify on Credly/g) || []).length, 8);
     assert.equal((html.match(/Verify on Coursera/g) || []).length, 1);

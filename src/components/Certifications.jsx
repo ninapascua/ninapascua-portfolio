@@ -5,7 +5,7 @@ import { Tabs } from './Common.jsx';
 
 export default function Certifications() {
   const [category, setCategory] = useState('All');
-  return <section id="certifications" className="certifications section"><div className="section-label">06 / CONTINUED CURIOSITY</div><h2>Never done <em>learning.</em></h2>
+  return <section id="certifications" className="certifications section"><div className="section-label">05 / CONTINUED CURIOSITY</div><h2>Never done <em>learning.</em></h2>
     <Tabs id="cert-filters" label="Filter certificates" items={['All', ...new Set(certificates.map(item => item[0]))]} active={category} onChange={setCategory} />
     <div id="certificates">{certificates.filter(item => category === 'All' || item[0] === category).map(([, name, provider, date]) => {
       const evidence = certificateEvidence[name];
