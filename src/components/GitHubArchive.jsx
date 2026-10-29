@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { projects } from '../data.js';
+import { projects, repositoryDescriptions } from '../data.js';
 import { safeUrl, selectRepositories, mergeRepositoryArchive } from '../utils.js';
 import useRepositories from '../hooks/useRepositories.js';
 import { Chips } from './Common.jsx';
@@ -16,10 +16,14 @@ export default function GitHubArchive() {
   const [language, setLanguage] = useState('');
   const [sort, setSort] = useState('updated');
   const collaborations = projects.filter(project => project.repo && !project.repo.startsWith('ninapascua/')).map(project => ({
-    id: project.repo, full_name: project.repo, name: project.name, description: project.subtitle,
+    id: project.repo, full_name: project.repo, name: project.name, description: project.description,
     html_url: `https://github.com/${project.repo}`, curated: true, collaborative: true,
   }));
-  const archive = mergeRepositoryArchive(repositories, collaborations);
+  const describedRepositories = repositories.map(repo => ({
+    ...repo,
+    description: repo.description?.trim() || repositoryDescriptions[repo.full_name?.toLowerCase()] || null,
+  }));
+  const archive = mergeRepositoryArchive(describedRepositories, collaborations);
   const languages = [...new Set(archive.map(repo => repo.language).filter(Boolean))].sort();
   const items = selectRepositories(archive, { query, language, sort });
   return <section id="github" className="github section"><div className="section-top"><div><div className="section-label">03 / THE CODE ARCHIVE</div><h2>Under the <em>hood.</em></h2></div><a className="button" href="https://github.com/ninapascua" target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div><p>Public repositories and collaborative projects, collected in one archive.</p>
