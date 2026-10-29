@@ -119,13 +119,10 @@
 .credential-link{display:inline-flex;align-items:center;min-height:40px;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:650px){.certificate-badge{width:25px;height:25px}.certificate>small .credential-link{min-height:36px}}
 
-/* Uniform icon slots use original badge art, without social-preview padding. */
-.certificate-badge{width:28px;height:28px;object-fit:contain;object-position:center}
-.certificate>span:first-child{display:flex;align-items:center;justify-content:center;width:28px;min-height:28px}
-@media(min-width:651px){.certificate{grid-template-columns:28px minmax(0,1fr) 170px}}
-@media(max-width:650px){.certificate{grid-template-columns:14px minmax(0,1fr)}.certificate-badge{width:14px;height:14px}.certificate>span:first-child{width:14px;min-height:14px}}
-
-.certificate>span:first-child{height:28px;overflow:hidden}.certificate-badge{flex-shrink:0}
-@media(max-width:650px){.certificate>span:first-child{height:14px}}
+/* Consistent 24px icons with more breathing room before credential text. */
+.certificate{grid-template-columns:24px minmax(0,1fr) 170px;column-gap:32px}
+.certificate-badge{width:24px;height:24px;object-fit:contain;object-position:center;flex-shrink:0}
+.certificate>span:first-child{display:flex;align-items:center;justify-content:center;width:24px;height:24px;min-height:24px;overflow:hidden}
+@media(max-width:650px){.certificate{grid-template-columns:24px minmax(0,1fr);column-gap:20px}}
 
 .certificate .credential-link{font:500 12px/1.5 'DM Sans',sans-serif;letter-spacing:0}
