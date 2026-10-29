@@ -127,3 +127,5 @@
 
 .certificate>span:first-child{height:28px;overflow:hidden}.certificate-badge{flex-shrink:0}
 @media(max-width:650px){.certificate>span:first-child{height:14px}}
+
+.certificate .credential-link{font:500 12px/1.5 'DM Sans',sans-serif;letter-spacing:0}
