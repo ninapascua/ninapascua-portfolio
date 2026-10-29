@@ -223,15 +223,20 @@ export function Contact({ onCv }) {
     <section id="contact" className="contact section">
       <div className="postcard">
         <div>
-          <span className="eyebrow">A NOTE TO MY NEXT COLLABORATOR</span>
+          <span className="eyebrow">OPEN TO WORK &amp; INTERNSHIPS</span>
           <h2>
-            Let’s make
+            Your team.
             <br />
-            something
+            My next
             <br />
-            <em>meaningful.</em>
+            <em>chapter.</em>
           </h2>
-          <span className="hand">Good things start with a hello.</span>
+          <p className="contact-intro">
+            I’m looking for work and internship opportunities in UI/UX design,
+            software development, and AI/ML. Have a place for a curious mind on
+            your team? I’d love to hear from you.
+          </p>
+          <span className="hand">Ready to learn. Excited to contribute.</span>
         </div>
         <div className="postcard-address">
           <div className="postage">
@@ -239,7 +244,7 @@ export function Contact({ onCv }) {
             <br />✳<br />
             PHILIPPINES
           </div>
-          <p>TO: A NEW IDEA, A NEW CONNECTION</p>
+          <p>TO: MY NEXT TEAM</p>
           <a href="mailto:ninapascua88@gmail.com">ninapascua88@gmail.com ↗</a>
           <a
             href="https://github.com/ninapascua"

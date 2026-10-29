@@ -1,4 +1,4 @@
-# Niña Pascua - Creative Archive
+# Portfolio — Niña Pascua
 
 A React + Vite portfolio with six project showcases, a personal portrait, CV viewing and downloading, skills, education, leadership, awards, eleven credential links, and contact details.
 
@@ -7,7 +7,7 @@ A React + Vite portfolio with six project showcases, a personal portrait, CV vie
 Use Node.js 22.12+ or a newer supported LTS release. In PowerShell:
 
 ```powershell
-cd C:\Users\PC\Desktop\portfolio\nina-archive
+cd C:\Users\PC\Desktop\portfolio
 npm.cmd ci
 npm.cmd run dev
 ```

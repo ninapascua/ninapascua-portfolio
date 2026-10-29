@@ -912,6 +912,13 @@ dialog .project-actions {
   overflow-wrap: break-word;
 }
 
+.contact-intro {
+  max-width: 38ch;
+  margin: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
 .media-caption {
   display: flex;
   justify-content: space-between;

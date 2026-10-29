@@ -3,3 +3,4 @@ dist/
 .sites-runtime/
 outputs/
 *.log
+*.tar.gz
