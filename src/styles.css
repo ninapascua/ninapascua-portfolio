@@ -114,3 +114,7 @@
   #skill-list{grid-template-columns:minmax(0,1fr)}
   .timeline-item{grid-template-columns:75px minmax(0,1fr);gap:12px}
 }
+
+.certificate-badge{display:block;width:40px;height:40px;object-fit:contain}
+.credential-link{display:inline-flex;align-items:center;min-height:40px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:650px){.certificate-badge{width:25px;height:25px}.certificate>small .credential-link{min-height:36px}}

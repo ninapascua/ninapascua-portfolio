@@ -31,5 +31,29 @@ export const projects=[
 {name:'Floralia',subtitle:'Floral Workshop Website',category:['UI/UX','Web Development'],type:'Responsive website',repo:'ninapascua/floralia',description:'A floral workshop website with membership and class information, custom layouts, and a cohesive visual identity.',role:['Designed and developed a responsive website.','Created visual layouts, typography, and floral-inspired elements.','Contributed the article “Burnout Is the New Broken Wing: Why We’re Still Expected to Fly.”'],features:['Workshop and class information','Membership information','Editorial content','Responsive compositions'],tech:['HTML','CSS','JavaScript'],symbol:'⚘',note:'Good ideas deserve room to bloom.'}
 ].map(p=>({...p,description:repositoryDescriptions[p.repo?.toLowerCase()]||p.description,media:projectMedia[p.name]||[]}));
 export const skills={'Design':['Figma','Canva','UI/UX Design'],'Languages':['Python','Java','JavaScript','Dart'],'Web & Mobile':['HTML','CSS','React','Flutter'],'Backend & Data':['PostgreSQL','Supabase'],'Tools':['Git','GitHub','Visual Studio Code'],'People':['Leadership','Collaboration','Communication','Problem-Solving','Critical Thinking','Adaptability','Attention to Detail']};
-export const certificates=[['Design','Work with Components in Figma','Coursera','September 2024'],['Development','Legacy Responsive Web Design V8','freeCodeCamp','September 2024'],['Development','JavaScript Essentials 1','Cisco','October 2024'],['Development','Relational Database V8','freeCodeCamp','February 2025'],['AI & Data','Artificial Intelligence Fundamentals','IBM','March 2026'],['AI & Data','AI Fundamentals with IBM SkillsBuild','Cisco','March 2026'],['AI & Data','Data Analytics Essentials','Cisco','March 2026'],['Cloud & Security','AWS Academy Graduate — Cloud Foundations Training Badge','AWS Academy','March 2026'],['Cloud & Security','Endpoint Security','Cisco','August 2025'],['IT Fundamentals','CompTIA IT Fundamentals+ (ITF+) Certification','CompTIA','November 2023']];
+export const certificates=[
+  ['Design','Work with Components in Figma','Coursera','September 2024'],
+  ['Development','Legacy Responsive Web Design V8','freeCodeCamp','September 2024'],
+  ['Development','JavaScript Essentials 1','Cisco','October 2024'],
+  ['Development','Relational Database V8','freeCodeCamp','February 2025'],
+  ['AI & Data','Artificial Intelligence Fundamentals','IBM SkillsBuild','March 2026'],
+  ['AI & Data','AI Fundamentals with IBM SkillsBuild','Cisco','March 2026'],
+  ['AI & Data','Data Analytics Essentials','Cisco','March 2026'],
+  ['Cloud & Security','AWS Academy Graduate — Cloud Foundations Training Badge','AWS Academy','March 2026'],
+  ['Cloud & Security','Endpoint Security','Cisco','August 2025'],
+  ['Cloud & Security','Cyber Threat Management','Cisco',null],
+  ['IT Fundamentals','CompTIA IT Fundamentals+ (ITF+) Certification','CompTIA','November 2023'],
+];
+// Public badges matched by their issuer-provided titles and recipient names.
+// Cyber Threat Management has no supplied issue date; none is inferred.
+export const certificateEvidence={
+  'AWS Academy Graduate — Cloud Foundations Training Badge':{url:'https://www.credly.com/badges/15bdbc5b-107d-436f-b3a6-dae5b23b1c2b/public_url',image:'assets/certifications/aws-cloud-foundations.png'},
+  'AI Fundamentals with IBM SkillsBuild':{url:'https://www.credly.com/badges/1f7b30a3-dffa-4e56-ace2-96776c407d72/public_url',image:'assets/certifications/ai-fundamentals-cisco.png'},
+  'Artificial Intelligence Fundamentals':{url:'https://www.credly.com/badges/37ca537e-569f-4f81-838e-6ada6ba7b524/public_url',image:'assets/certifications/ai-fundamentals-ibm.png'},
+  'CompTIA IT Fundamentals+ (ITF+) Certification':{url:'https://www.credly.com/badges/6afa26a7-421e-495e-9590-28441ad9e4a8/public_url',image:'assets/certifications/comptia-itf.png'},
+  'Cyber Threat Management':{url:'https://www.credly.com/badges/fd5c6e8b-7afc-4a31-8114-72966ee442f1/public_url',image:'assets/certifications/cyber-threat-management.png'},
+  'Data Analytics Essentials':{url:'https://www.credly.com/badges/8b6908f6-e4ba-4841-8a2c-2bd1fa22973c/public_url',image:'assets/certifications/data-analytics.png'},
+  'Endpoint Security':{url:'https://www.credly.com/badges/db153fb0-3761-4e94-9eb2-a98d63b56ac2/public_url',image:'assets/certifications/endpoint-security.png'},
+  'JavaScript Essentials 1':{url:'https://www.credly.com/badges/5ed4f4af-b2e6-4322-83a3-4cb0c7e98931/public_url',image:'assets/certifications/javascript-essentials.png'},
+};
 export const leadership=[['2025–2026','Google Developer Groups','Internal Relations Staff'],['2025–2026','Code Geeks','Events Staff'],['2024–2025','HAU Student Council','Associate Solicitor General · School of Computing'],['2024–2025','League of Outstanding Programmers','Director for Community Development'],['2023–2024','HAU Student Council','I.V.Y League Member'],['2023–2024','League of Outstanding Programmers','Member'],['2023–2024','Cybersecurity Intelligence and Alliance','Member']];
