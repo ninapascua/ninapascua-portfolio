@@ -40,11 +40,11 @@ export default function useRepositories() {
       if (!Array.isArray(data) || !data.every(repo => typeof repo.name === 'string')) throw new Error('Invalid repository response');
       if (request !== controller.current) return;
       setRepositories(data);
-      setStatus(`${data.length} public repositories · updated from GitHub just now`);
+      setStatus('Public repository data updated from GitHub just now');
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ time: Date.now(), data })); } catch { /* Storage can be disabled in the browser. */ }
     } catch {
       if (request !== controller.current) return;
-      setStatus(cache ? 'GitHub is unavailable. Showing the last cached snapshot.' : 'GitHub is temporarily unavailable. The selected work and collaborative archive are still available.');
+      setStatus(cache ? 'GitHub is unavailable. Showing the last cached snapshot.' : 'GitHub is temporarily unavailable. Curated collaborative projects are shown below.');
     } finally {
       clearTimeout(timeout);
       if (request === controller.current) setLoading(false);

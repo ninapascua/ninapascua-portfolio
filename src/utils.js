@@ -13,5 +13,16 @@ export function safeUrl(value) {
 
 export function selectRepositories(repositories, { query = '', language = '', sort = 'updated' } = {}) {
   return repositories.filter(repo => repo.name.toLowerCase().includes(query.toLowerCase()) && (!language || repo.language === language))
-    .sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : sort === 'stars' ? b.stargazers_count - a.stargazers_count : new Date(b.updated_at) - new Date(a.updated_at));
+    .sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : sort === 'stars' ? (b.stargazers_count ?? -1) - (a.stargazers_count ?? -1) : (b.updated_at ? new Date(b.updated_at).getTime() : 0) - (a.updated_at ? new Date(a.updated_at).getTime() : 0));
+}
+
+export function mergeRepositoryArchive(repositories, collaborations) {
+  const archive = new Map();
+  for (const repo of [...collaborations, ...repositories]) {
+    const name = repo.name.toLowerCase();
+    if (name.includes('fcc') || name === 'rice-leaf-disease-detection') continue;
+    const key = (repo.full_name || repo.html_url || repo.name).toLowerCase();
+    archive.set(key, repo);
+  }
+  return [...archive.values()];
 }

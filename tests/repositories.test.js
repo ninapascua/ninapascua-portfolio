@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { safeUrl, selectRepositories } from '../src/utils.js';
+import { safeUrl, selectRepositories, mergeRepositoryArchive } from '../src/utils.js';
 
 const repositories = [
   { name: 'Sipori', language: 'JavaScript', stargazers_count: 2, updated_at: '2026-03-10' },
@@ -24,4 +24,20 @@ test('API-provided website links accept web protocols and reject executable URLs
   assert.equal(safeUrl('javascript:alert(1)'), '#');
   assert.equal(safeUrl('not a URL'), '#');
   assert.equal(safeUrl('https://example.com/demo'), 'https://example.com/demo');
+});
+
+test('combined archive hides excluded repositories and deduplicates team repositories', () => {
+  const team = { name: 'AniMedika', full_name: 'cinemaseven/AniMedika', curated: true };
+  const fetchedTeam = { ...team, curated: false, updated_at: '2026-05-10' };
+  const items = mergeRepositoryArchive([
+    ...repositories,
+    { name: 'fcc-survey-form' },
+    { name: 'FCC-portfolio' },
+    { name: 'Rice-Leaf-Disease-Detection' },
+    fetchedTeam,
+  ], [team, { name: 'eLingkod', full_name: 'cinemaseven/eLingkod', curated: true }]);
+  assert.equal(items.length, 5);
+  assert.equal(items.filter(repo => repo.full_name === team.full_name).length, 1);
+  assert.equal(items.find(repo => repo.full_name === team.full_name).curated, false);
+  assert.equal(selectRepositories(items)[0].name, 'AniMedika');
 });
