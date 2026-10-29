@@ -11,9 +11,16 @@ export function safeUrl(value) {
   } catch { return '#'; }
 }
 
-export function selectRepositories(repositories, { query = '', language = '', sort = 'updated' } = {}) {
+export function selectRepositories(repositories, { query = '', language = '', sort = 'updated', order = [] } = {}) {
+  const ranks = new Map(order.map((name, index) => [name.toLowerCase(), index]));
+  const rank = repo => ranks.get((repo.full_name || repo.name).toLowerCase()) ?? Number.MAX_SAFE_INTEGER;
   return repositories.filter(repo => repo.name.toLowerCase().includes(query.toLowerCase()) && (!language || repo.language === language))
-    .sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : sort === 'stars' ? (b.stargazers_count ?? -1) - (a.stargazers_count ?? -1) : (b.updated_at ? new Date(b.updated_at).getTime() : 0) - (a.updated_at ? new Date(a.updated_at).getTime() : 0));
+    .sort((a, b) => {
+      if (sort === 'featured' && rank(a) !== rank(b)) return rank(a) - rank(b);
+      if (sort === 'name') return a.name.localeCompare(b.name);
+      if (sort === 'stars') return (b.stargazers_count ?? -1) - (a.stargazers_count ?? -1);
+      return (b.updated_at ? new Date(b.updated_at).getTime() : 0) - (a.updated_at ? new Date(a.updated_at).getTime() : 0);
+    });
 }
 
 export function mergeRepositoryArchive(repositories, collaborations) {

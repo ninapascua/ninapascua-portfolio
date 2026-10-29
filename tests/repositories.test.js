@@ -1,12 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { safeUrl, selectRepositories, mergeRepositoryArchive } from '../src/utils.js';
+import { repositoryOrder } from '../src/data.js';
 
 const repositories = [
   { name: 'Sipori', language: 'JavaScript', stargazers_count: 2, updated_at: '2026-03-10' },
   { name: 'Archive', language: null, stargazers_count: 5, updated_at: '2026-04-10' },
   { name: 'Study', language: 'Python', stargazers_count: 0, updated_at: '2026-01-10' },
 ];
+
+test('portfolio order preserves the requested sequence, including after filtering', () => {
+  const archive = [...repositoryOrder].reverse().map((full_name, index) => ({
+    full_name, name: full_name.split('/')[1], language: index % 2 ? 'JavaScript' : null,
+  }));
+  const ordered = selectRepositories(archive, { sort: 'featured', order: repositoryOrder });
+  assert.deepEqual(ordered.map(repo => repo.full_name), repositoryOrder);
+  const filtered = selectRepositories(archive, { sort: 'featured', order: repositoryOrder, language: 'JavaScript' });
+  assert.deepEqual(filtered.map(repo => repo.full_name), repositoryOrder.filter(name => archive.find(repo => repo.full_name === name).language === 'JavaScript'));
+});
 
 test('repository search combines case-insensitive name matching and language selection', () => {
   assert.deepEqual(selectRepositories(repositories, { query: 'SI', language: 'JavaScript' }).map(repo => repo.name), ['Sipori']);

@@ -1,4 +1,11 @@
 export const profile={photo:'assets/portrait/603F35F6-C952-4F3F-972C-8D3D7FA698B6 (2).jpeg',cv:'assets/Nina-Pascua-CV.pdf',linkedin:'https://www.linkedin.com/in/ni%C3%B1a-pascua-3a359b343/'};
+export const repositoryOrder=[
+  'cinemaseven/AniMedika-A-Rice-Leaf-Disease-Detection-System',
+  'ninapascua/Sipori',
+  'RandelYumul/Truth_in_Tales',
+  'cinemaseven/eLingkod',
+  'ninapascua/floralia',
+];
 export const projectMedia={
   'AniMedika':[
     {src:'assets/projects/animedika/Screenshot 2026-10-29 172931.png',alt:'AniMedika homepage with Filipino and English language selection'},

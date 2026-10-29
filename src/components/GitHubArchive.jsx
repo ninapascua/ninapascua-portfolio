@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { projects, repositoryDescriptions } from '../data.js';
+import { projects, repositoryDescriptions, repositoryOrder } from '../data.js';
 import { safeUrl, selectRepositories, mergeRepositoryArchive } from '../utils.js';
 import useRepositories from '../hooks/useRepositories.js';
 import { Chips } from './Common.jsx';
@@ -14,7 +14,7 @@ export default function GitHubArchive() {
   const { repositories, status, loading, refresh } = useRepositories();
   const [query, setQuery] = useState('');
   const [language, setLanguage] = useState('');
-  const [sort, setSort] = useState('updated');
+  const [sort, setSort] = useState('featured');
   const collaborations = projects.filter(project => project.repo && !project.repo.startsWith('ninapascua/')).map(project => ({
     id: project.repo, full_name: project.repo, name: project.name, description: project.description,
     html_url: `https://github.com/${project.repo}`, curated: true, collaborative: true,
@@ -25,9 +25,9 @@ export default function GitHubArchive() {
   }));
   const archive = mergeRepositoryArchive(describedRepositories, collaborations);
   const languages = [...new Set(archive.map(repo => repo.language).filter(Boolean))].sort();
-  const items = selectRepositories(archive, { query, language, sort });
-  return <section id="github" className="github section"><div className="section-top"><div><div className="section-label">03 / THE CODE ARCHIVE</div><h2>Under the <em>hood.</em></h2></div><a className="button" href="https://github.com/ninapascua" target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div><p>Public repositories and collaborative projects, collected in one archive.</p>
-    <div className="archive-controls"><label>Find a repository<input id="repo-search" type="search" placeholder="Search the archive…" value={query} onChange={event => setQuery(event.target.value)} /></label><label>Language<select id="language" value={language} onChange={event => setLanguage(event.target.value)}><option value="">All languages</option>{languages.map(value => <option key={value}>{value}</option>)}</select></label><label>Sort by<select id="sort" value={sort} onChange={event => setSort(event.target.value)}><option value="updated">Recently updated</option><option value="name">Name A–Z</option></select></label><button id="refresh" disabled={loading} onClick={() => refresh(true)}>Refresh ↻</button></div>
+  const items = selectRepositories(archive, { query, language, sort, order: repositoryOrder });
+  return <section id="github" className="github section"><div className="section-top"><div><div className="section-label">03 / THE CODE ARCHIVE</div><h2>Code &amp; <em>collaborations.</em></h2></div><a className="button" href="https://github.com/ninapascua" target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div><p>Public repositories and collaborative projects, collected in one archive.</p>
+    <div className="archive-controls"><label>Find a repository<input id="repo-search" type="search" placeholder="Search the archive…" value={query} onChange={event => setQuery(event.target.value)} /></label><label>Language<select id="language" value={language} onChange={event => setLanguage(event.target.value)}><option value="">All languages</option>{languages.map(value => <option key={value}>{value}</option>)}</select></label><label>Sort by<select id="sort" value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Portfolio order</option><option value="updated">Recently updated</option><option value="name">Name A–Z</option></select></label><button id="refresh" disabled={loading} onClick={() => refresh(true)}>Refresh ↻</button></div>
     <p id="repo-status" role="status">{status}</p><div id="repos" className="repo-grid" aria-busy={loading}>
       {items.map((repo, index) => <RepositoryCard key={repo.id ?? repo.name} repository={repo} index={index} />)}
       {!items.length && <p>No repositories match this selection.</p>}
