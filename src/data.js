@@ -47,16 +47,16 @@ export const certificates=[
 // Public badges matched by their issuer-provided titles and recipient names.
 // Cyber Threat Management's issue date is verified from Credly's public badge metadata.
 export const certificateEvidence={
-  'Work with Components in Figma':{url:'https://www.coursera.org/account/accomplishments/verify/25W7WW8QQI3B',provider:'Coursera',image:'assets/certifications/coursera-logo.png',imageAlt:'Coursera logo'},
-  'Relational Database V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/relational-database-v8',provider:'freeCodeCamp',image:'assets/certifications/freecodecamp-logo.png',imageAlt:'freeCodeCamp logo'},
-  'Legacy Responsive Web Design V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/responsive-web-design',provider:'freeCodeCamp',image:'assets/certifications/freecodecamp-logo.png',imageAlt:'freeCodeCamp logo'},
-  'AWS Academy Graduate — Cloud Foundations Training Badge':{url:'https://www.credly.com/badges/15bdbc5b-107d-436f-b3a6-dae5b23b1c2b/public_url',image:'assets/certifications/aws-cloud-foundations.png'},
-  'AI Fundamentals with IBM SkillsBuild':{url:'https://www.credly.com/badges/1f7b30a3-dffa-4e56-ace2-96776c407d72/public_url',image:'assets/certifications/ai-fundamentals-cisco.png'},
-  'Artificial Intelligence Fundamentals':{url:'https://www.credly.com/badges/37ca537e-569f-4f81-838e-6ada6ba7b524/public_url',image:'assets/certifications/ai-fundamentals-ibm.png'},
-  'CompTIA IT Fundamentals+ (ITF+) Certification':{url:'https://www.credly.com/badges/6afa26a7-421e-495e-9590-28441ad9e4a8/public_url',image:'assets/certifications/comptia-itf.png'},
-  'Cyber Threat Management':{url:'https://www.credly.com/badges/fd5c6e8b-7afc-4a31-8114-72966ee442f1/public_url',image:'assets/certifications/cyber-threat-management.png'},
-  'Data Analytics Essentials':{url:'https://www.credly.com/badges/8b6908f6-e4ba-4841-8a2c-2bd1fa22973c/public_url',image:'assets/certifications/data-analytics.png'},
-  'Endpoint Security':{url:'https://www.credly.com/badges/db153fb0-3761-4e94-9eb2-a98d63b56ac2/public_url',image:'assets/certifications/endpoint-security.png'},
-  'JavaScript Essentials 1':{url:'https://www.credly.com/badges/5ed4f4af-b2e6-4322-83a3-4cb0c7e98931/public_url',image:'assets/certifications/javascript-essentials.png'},
+  'Work with Components in Figma':{url:'https://www.coursera.org/account/accomplishments/verify/25W7WW8QQI3B',provider:'Coursera',image:'assets/certifications/coursera-logo.ee9edd35.png',imageAlt:'Coursera logo'},
+  'Relational Database V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/relational-database-v8',provider:'freeCodeCamp',image:'assets/certifications/freecodecamp-logo.bfa5ec0b.png',imageAlt:'freeCodeCamp logo'},
+  'Legacy Responsive Web Design V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/responsive-web-design',provider:'freeCodeCamp',image:'assets/certifications/freecodecamp-logo.bfa5ec0b.png',imageAlt:'freeCodeCamp logo'},
+  'AWS Academy Graduate — Cloud Foundations Training Badge':{url:'https://www.credly.com/badges/15bdbc5b-107d-436f-b3a6-dae5b23b1c2b/public_url',image:'assets/certifications/aws-cloud-foundations.dffc71d9.png',artworkScale:1.3},
+  'AI Fundamentals with IBM SkillsBuild':{url:'https://www.credly.com/badges/1f7b30a3-dffa-4e56-ace2-96776c407d72/public_url',image:'assets/certifications/ai-fundamentals-cisco.6de116f6.png'},
+  'Artificial Intelligence Fundamentals':{url:'https://www.credly.com/badges/37ca537e-569f-4f81-838e-6ada6ba7b524/public_url',image:'assets/certifications/ai-fundamentals-ibm.7db6a05a.png'},
+  'CompTIA IT Fundamentals+ (ITF+) Certification':{url:'https://www.credly.com/badges/6afa26a7-421e-495e-9590-28441ad9e4a8/public_url',image:'assets/certifications/comptia-itf.41050828.png',artworkScale:1.34},
+  'Cyber Threat Management':{url:'https://www.credly.com/badges/fd5c6e8b-7afc-4a31-8114-72966ee442f1/public_url',image:'assets/certifications/cyber-threat-management.ee6af987.png'},
+  'Data Analytics Essentials':{url:'https://www.credly.com/badges/8b6908f6-e4ba-4841-8a2c-2bd1fa22973c/public_url',image:'assets/certifications/data-analytics.7f2e607d.png'},
+  'Endpoint Security':{url:'https://www.credly.com/badges/db153fb0-3761-4e94-9eb2-a98d63b56ac2/public_url',image:'assets/certifications/endpoint-security.6be8e0c1.png'},
+  'JavaScript Essentials 1':{url:'https://www.credly.com/badges/5ed4f4af-b2e6-4322-83a3-4cb0c7e98931/public_url',image:'assets/certifications/javascript-essentials.ece5a2c7.png'},
 };
 export const leadership=[['2025–2026','Google Developer Groups','Internal Relations Staff'],['2025–2026','Code Geeks','Events Staff'],['2024–2025','HAU Student Council','Associate Solicitor General · School of Computing'],['2024–2025','League of Outstanding Programmers','Director for Community Development'],['2023–2024','HAU Student Council','I.V.Y League Member'],['2023–2024','League of Outstanding Programmers','Member'],['2023–2024','Cybersecurity Intelligence and Alliance','Member']];

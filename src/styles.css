@@ -124,3 +124,6 @@
 .certificate>span:first-child{display:flex;align-items:center;justify-content:center;width:48px;min-height:48px}
 @media(min-width:651px){.certificate{grid-template-columns:48px minmax(0,1fr) 170px}}
 @media(max-width:650px){.certificate{grid-template-columns:32px minmax(0,1fr)}.certificate-badge{width:32px;height:32px}.certificate>span:first-child{width:32px;min-height:32px}}
+
+.certificate>span:first-child{height:48px;overflow:hidden}.certificate-badge{flex-shrink:0}
+@media(max-width:650px){.certificate>span:first-child{height:32px}}
