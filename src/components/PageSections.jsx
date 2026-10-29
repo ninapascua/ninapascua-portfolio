@@ -225,18 +225,14 @@ export function Contact({ onCv }) {
         <div>
           <span className="eyebrow">OPEN TO WORK &amp; INTERNSHIPS</span>
           <h2>
-            Your team.
+            Let’s work
             <br />
-            My next
-            <br />
-            <em>chapter.</em>
+            <em>together.</em>
           </h2>
           <p className="contact-intro">
-            I’m looking for work and internship opportunities in UI/UX design,
-            software development, and AI/ML. Have a place for a curious mind on
-            your team? I’d love to hear from you.
+            Looking for UI/UX, software development, and AI/ML opportunities.
           </p>
-          <span className="hand">Ready to learn. Excited to contribute.</span>
+          <span className="hand">Ready to contribute.</span>
         </div>
         <div className="postcard-address">
           <div className="postage">
