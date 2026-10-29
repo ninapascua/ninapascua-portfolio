@@ -21,6 +21,8 @@ test('React renders all portfolio sections, six project entries, and the full cr
     assert.ok(html.includes('aria-label="Filter projects"'));
     assert.equal((html.match(/class="certificate"/g) || []).length, 11);
     assert.equal((html.match(/Verify on Credly/g) || []).length, 8);
-    assert.equal((html.match(/VERIFICATION PENDING/g) || []).length, 3);
+    assert.equal((html.match(/Verify on Coursera/g) || []).length, 1);
+    assert.equal((html.match(/Verify on freeCodeCamp/g) || []).length, 2);
+    assert.equal((html.match(/VERIFICATION PENDING/g) || []).length, 0);
   } finally { await server.close(); }
 });

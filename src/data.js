@@ -47,6 +47,9 @@ export const certificates=[
 // Public badges matched by their issuer-provided titles and recipient names.
 // Cyber Threat Management has no supplied issue date; none is inferred.
 export const certificateEvidence={
+  'Work with Components in Figma':{url:'https://www.coursera.org/account/accomplishments/verify/25W7WW8QQI3B',provider:'Coursera'},
+  'Relational Database V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/relational-database-v8',provider:'freeCodeCamp'},
+  'Legacy Responsive Web Design V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/responsive-web-design',provider:'freeCodeCamp'},
   'AWS Academy Graduate — Cloud Foundations Training Badge':{url:'https://www.credly.com/badges/15bdbc5b-107d-436f-b3a6-dae5b23b1c2b/public_url',image:'assets/certifications/aws-cloud-foundations.png'},
   'AI Fundamentals with IBM SkillsBuild':{url:'https://www.credly.com/badges/1f7b30a3-dffa-4e56-ace2-96776c407d72/public_url',image:'assets/certifications/ai-fundamentals-cisco.png'},
   'Artificial Intelligence Fundamentals':{url:'https://www.credly.com/badges/37ca537e-569f-4f81-838e-6ada6ba7b524/public_url',image:'assets/certifications/ai-fundamentals-ibm.png'},

@@ -10,9 +10,9 @@ export default function Certifications() {
     <div id="certificates">{certificates.filter(item => category === 'All' || item[0] === category).map(([, name, provider, date]) => {
       const evidence = certificateEvidence[name];
       return <article className="certificate" key={name}>
-        <span>{evidence ? <img className="certificate-badge" src={assetUrl(evidence.image)} alt="" loading="lazy" width="40" height="40" /> : '✧'}</span>
+        <span>{evidence?.image ? <img className="certificate-badge" src={assetUrl(evidence.image)} alt="" loading="lazy" width="40" height="40" /> : '✧'}</span>
         <div><h3>{name}</h3><p>{provider}{date ? ` / ${date}` : ''}</p></div>
-        <small>{evidence ? <a className="credential-link" href={evidence.url} target="_blank" rel="noreferrer" aria-label={`Verify ${name} on Credly`}>Verify on Credly ↗</a> : 'VERIFICATION PENDING'}</small>
+        <small>{evidence ? <a className="credential-link" href={evidence.url} target="_blank" rel="noreferrer" aria-label={`Verify ${name} on ${evidence.provider || 'Credly'}`}>Verify on {evidence.provider || 'Credly'} ↗</a> : 'VERIFICATION PENDING'}</small>
       </article>;
     })}</div>
 
