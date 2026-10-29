@@ -9,7 +9,7 @@ import Certifications from './components/Certifications.jsx';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  return <header><a className="brand" href="#home">np<span>✳</span></a><span className="edition">THE PERSONAL ARCHIVE<br />DESIGN + CODE + CURIOSITY</span><button id="menu" aria-expanded={menuOpen} aria-controls="nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? '−' : '+'}</button><nav id="nav" className={menuOpen ? 'open' : ''} onClick={event => { if (event.target.closest('a')) setMenuOpen(false); }}><a href="#about">The person</a><a href="#projects">Selected work <sup>06</sup></a><a href="#github">Code archive</a><a href="#journey">The journey</a><a className="nav-contact" href="#contact">Say hello ↗</a></nav></header>;
+  return <header><a className="brand" href="#home">np<span>✳</span></a><span className="edition">THE PERSONAL ARCHIVE</span><button id="menu" aria-expanded={menuOpen} aria-controls="nav" onClick={() => setMenuOpen(!menuOpen)}>Menu {menuOpen ? '−' : '+'}</button><nav id="nav" className={menuOpen ? 'open' : ''} onClick={event => { if (event.target.closest('a')) setMenuOpen(false); }}><a href="#about">The person</a><a href="#projects">Selected work <sup>06</sup></a><a href="#github">Code archive</a><a href="#journey">The journey</a><a className="nav-contact" href="#contact">Say hello ↗</a></nav></header>;
 }
 
 function Skills() {
