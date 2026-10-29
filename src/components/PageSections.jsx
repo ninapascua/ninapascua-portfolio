@@ -150,9 +150,7 @@ export function Journey() {
       <div className="section-top">
         <div>
           <div className="section-label">04 / THE JOURNEY</div>
-          <h2>
-            Education &amp; <em>involvement.</em>
-          </h2>
+          <h2>Education</h2>
         </div>
         <span className="hand">a work in progress, in the best way.</span>
       </div>
