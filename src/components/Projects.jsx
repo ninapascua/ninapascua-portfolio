@@ -29,7 +29,6 @@ export function CaseStudy({ project }) {
   return <><div className="section-label">PROJECT NOTES / {project.type}</div><h2 id="modal-title">{project.name}</h2><p className="subtitle">{project.subtitle}</p><h3>Overview & purpose</h3><p>{project.description}</p><ProjectMedia project={project} index={gallery} onChange={setGallery} />
     <h3>My role & contributions</h3><ul>{project.role.map(item => <li key={item}>{item}</li>)}</ul><h3>Key features</h3><ul>{project.features.map(item => <li key={item}>{item}</li>)}</ul>
     {project.tech.length > 0 && <><h3>Technologies</h3><Chips items={project.tech} /></>}
-    <p className="meta">Contributions are recorded from the supplied portfolio brief. Additional process documentation and authentic media can be added as they become available.</p>
     {project.name === 'Sipori' && <p>The deployed journal requires private owner authentication. No private records or sign-in credentials are provided.</p>}
     <div className="project-actions"><ProjectActions project={project} /></div>
   </>;
