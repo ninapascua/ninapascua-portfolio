@@ -2,7 +2,7 @@ import { profile, leadership } from '../data.js';
 import { assetUrl } from '../utils.js';
 
 function Portrait() {
-  return <div className="portrait-inner">{profile.photo ? <img src={assetUrl(profile.photo)} alt="Niña Pascua" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : <><span className="portrait-flower">✳</span><span className="monogram">n.</span><small>A PERSONAL PORTRAIT<br />COMING SOON</small></>}</div>;
+  return <div className="portrait-inner">{profile.photo ? <img src={assetUrl(profile.photo)} alt="Niña Pascua" fetchPriority="high" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center 20%'}} /> : <><span className="portrait-flower">✳</span><span className="monogram">n.</span><small>A PERSONAL PORTRAIT<br />COMING SOON</small></>}</div>;
 }
 
 export function Hero({ onCv }) {

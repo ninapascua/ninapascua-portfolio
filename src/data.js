@@ -1,4 +1,18 @@
-export const profile={photo:null,cv:'assets/Nina-Pascua-CV.pdf',linkedin:'https://www.linkedin.com/in/ni%C3%B1a-pascua-3a359b343/'};
+export const profile={photo:'assets/portrait/603F35F6-C952-4F3F-972C-8D3D7FA698B6 (2).jpeg',cv:'assets/Nina-Pascua-CV.pdf',linkedin:'https://www.linkedin.com/in/ni%C3%B1a-pascua-3a359b343/'};
+export const projectMedia={
+  'AniMedika':[
+    {src:'assets/projects/animedika/Screenshot 2026-10-29 172931.png',alt:'AniMedika homepage with Filipino and English language selection'},
+    {src:'assets/projects/animedika/Screenshot 2026-10-29 172949.png',alt:'AniMedika usage instructions and rice leaf image upload interface'},
+  ],
+  'Sipori':[1,2,3,4].map(n=>({src:`assets/projects/sipori/sipori${n}.png`,alt:`Sipori application screenshot ${n} from the project repository`})),
+  'eLingkod':[
+    {src:'assets/projects/elingkod/4.png',alt:'eLingkod project presentation showing the mobile services menu',caption:'PROJECT PRESENTATION / MOBILE SERVICES'},
+    {src:'assets/projects/elingkod/5.png',alt:'eLingkod project presentation showing the administrative request dashboard',caption:'PROJECT PRESENTATION / ADMIN DASHBOARD'},
+  ],
+  'Truth in Tales':[{src:'assets/projects/truth-in-tales/truth.png',alt:'Truth in Tales website preview from the project repository'}],
+  'Bake & Co.':[{src:'assets/projects/bake-and-co/Screenshot 2026-10-29 220847.png',alt:'Bake & Co. mobile interface design board showing sign-in, product browsing, cart, checkout, and profile screens',caption:'DESIGN BOARD / MOBILE INTERFACES'}],
+  'Floralia':[{src:'assets/projects/floralia/Screenshot 2026-10-29 215750.png',alt:'Floralia studio homepage with floral imagery and navigation to membership, classes, and About'}],
+};
 // Concise summaries verified against each repository's README on 2026-10-29.
 // Used when the GitHub API's About description is empty.
 export const repositoryDescriptions={
@@ -15,10 +29,7 @@ export const projects=[
 {name:'Truth in Tales',subtitle:'Creative Writing Website',category:['UI/UX','Web Development'],type:'Collaborative · Six-member team',repo:'RandelYumul/Truth_in_Tales',live:'https://randelyumul.github.io/Truth_in_Tales/',description:'A shared home for stories, reflections, essays, and personal experiences, with a thoughtful reading experience.',role:['Collaborated with a six-member team.','Designed intuitive layouts and navigation.','Worked on typography, reader-friendly compositions, and responsive design.'],features:['Creative writing and reflections','Reader-friendly typography','Responsive layouts'],tech:['HTML','CSS','JavaScript'],symbol:'❝',note:'A place for stories to unfold.'},
 {name:'Bake & Co.',subtitle:'Bakery Mobile Application',category:['UI/UX','Mobile Development'],type:'Collaborative mobile application',description:'A Flutter mobile application for browsing bakery products through an organized, user-friendly interface.',role:['Developed mobile UI components and product displays.','Created custom visual elements and reusable Flutter widgets.','Contributed design and backend-related work.'],features:['Bakery product browsing','Organized product displays','Reusable interface components'],tech:['Flutter','Dart'],symbol:'✿',note:'Thoughtfully made, down to the crumbs.'},
 {name:'Floralia',subtitle:'Floral Workshop Website',category:['UI/UX','Web Development'],type:'Responsive website',repo:'ninapascua/floralia',description:'A floral workshop website with membership and class information, custom layouts, and a cohesive visual identity.',role:['Designed and developed a responsive website.','Created visual layouts, typography, and floral-inspired elements.','Contributed the article “Burnout Is the New Broken Wing: Why We’re Still Expected to Fly.”'],features:['Workshop and class information','Membership information','Editorial content','Responsive compositions'],tech:['HTML','CSS','JavaScript'],symbol:'⚘',note:'Good ideas deserve room to bloom.'}
-].map(p=>({...p,description:repositoryDescriptions[p.repo?.toLowerCase()]||p.description,media:
-  p.name === 'Sipori' ? [1,2,3,4].map(n=>({src:`assets/projects/sipori/sipori${n}.png`,alt:`Sipori application screenshot ${n} from the project repository`})) :
-  p.name === 'Truth in Tales' ? [{src:'assets/projects/truth-in-tales/truth.png',alt:'Truth in Tales website preview from the project repository'}] : []
-}));
+].map(p=>({...p,description:repositoryDescriptions[p.repo?.toLowerCase()]||p.description,media:projectMedia[p.name]||[]}));
 export const skills={'Design':['Figma','Canva','UI/UX Design'],'Languages':['Python','Java','JavaScript','Dart'],'Web & Mobile':['HTML','CSS','React','Flutter'],'Backend & Data':['PostgreSQL','Supabase'],'Tools':['Git','GitHub','Visual Studio Code'],'People':['Leadership','Collaboration','Communication','Problem-Solving','Critical Thinking','Adaptability','Attention to Detail']};
 export const certificates=[['Design','Work with Components in Figma','Coursera','September 2024'],['Development','Legacy Responsive Web Design V8','freeCodeCamp','September 2024'],['Development','JavaScript Essentials 1','Cisco','October 2024'],['Development','Relational Database V8','freeCodeCamp','February 2025'],['AI & Data','Artificial Intelligence Fundamentals','IBM','March 2026'],['AI & Data','AI Fundamentals with IBM SkillsBuild','Cisco','March 2026'],['AI & Data','Data Analytics Essentials','Cisco','March 2026'],['Cloud & Security','AWS Academy Graduate — Cloud Foundations Training Badge','AWS Academy','March 2026'],['Cloud & Security','Endpoint Security','Cisco','August 2025'],['IT Fundamentals','CompTIA IT Fundamentals+ (ITF+) Certification','CompTIA','November 2023']];
 export const leadership=[['2025–2026','Google Developer Groups','Internal Relations Staff'],['2025–2026','Code Geeks','Events Staff'],['2024–2025','HAU Student Council','Associate Solicitor General · School of Computing'],['2024–2025','League of Outstanding Programmers','Director for Community Development'],['2023–2024','HAU Student Council','I.V.Y League Member'],['2023–2024','League of Outstanding Programmers','Member'],['2023–2024','Cybersecurity Intelligence and Alliance','Member']];

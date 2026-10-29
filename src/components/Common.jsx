@@ -21,7 +21,7 @@ export function ProjectMedia({ project, index, onChange }) {
   const move = step => onChange((index + step + project.media.length) % project.media.length);
   return <div className="media-board">
     {image ? <img src={assetUrl(image.src)} alt={image.alt} loading="lazy" /> : <div className="project-art"><span className="art-symbol" aria-hidden="true">{project.symbol}</span><strong>{project.name}</strong><small>PROJECT ARTWORK · SCREENSHOTS TO BE ADDED</small></div>}
-    <div className="media-caption"><span>{image ? 'ACTUAL PROJECT SCREENSHOT' : 'ARCHIVE / VISUAL PLACEHOLDER'}</span>
+    <div className="media-caption"><span>{image ? image.caption || 'ACTUAL PROJECT SCREENSHOT' : 'ARCHIVE / VISUAL PLACEHOLDER'}</span>
       {project.media.length > 1 && <span className="gallery-buttons"><button onClick={() => move(-1)} aria-label="Previous screenshot">←</button> {index + 1} / {project.media.length}<button onClick={() => move(1)} aria-label="Next screenshot">→</button></span>}
     </div>
   </div>;

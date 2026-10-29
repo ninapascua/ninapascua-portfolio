@@ -34,8 +34,8 @@ The production build is generated in dist/. Deploy that directory to static host
 
 ## Updating content
 
-Edit src/data.js. The original CV is connected at public/assets/Nina-Pascua-CV.pdf, with viewing and download actions. The LinkedIn URL is set in profile.linkedin. Set profile.photo to assets/portrait.jpg after adding the authentic photograph to public/assets/; its placeholder remains until configured. Add or replace assets in public/assets/, since Vite regenerates dist/ on every build.
+Edit src/data.js. The original CV is connected at public/assets/Nina-Pascua-CV.pdf, with viewing and download actions. The LinkedIn URL is set in profile.linkedin, and the personal portrait is connected in profile.photo. Add or replace assets in public/assets/, since Vite regenerates dist/ on every build.
 
-Project media arrays are in src/data.js. Each image uses {src: 'assets/file.png', alt: 'Actual interface description'}. Sipori and Truth in Tales use authentic repository screenshots. Other projects show labeled artwork. Original certificate files and verification URLs can be added when supplied.
+All six projects now have media connected through projectMedia in src/data.js. Each image uses {src: 'assets/projects/project/file.png', alt: 'Actual interface description', caption: 'Optional media label'}. eLingkod presentation slides and the Bake & Co. interface design board have specific labels; the other projects show application or website screenshots. Original certificate files and verification URLs can be added when supplied.
 
 GitHub repositories are fetched client-side without tokens and cached for 30 minutes. Owned repositories and curated collaborative projects share the same searchable archive. Repositories containing fcc and the exact name Rice-Leaf-Disease-Detection are hidden. Featured projects and collaborative links remain available when the API is offline. React renders external text, and API-provided website URLs are restricted to HTTP/HTTPS.
