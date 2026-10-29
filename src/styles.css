@@ -118,3 +118,9 @@
 .certificate-badge{display:block;width:40px;height:40px;object-fit:contain}
 .credential-link{display:inline-flex;align-items:center;min-height:40px;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:650px){.certificate-badge{width:25px;height:25px}.certificate>small .credential-link{min-height:36px}}
+
+/* Uniform icon slots use original badge art, without social-preview padding. */
+.certificate-badge{width:48px;height:48px;object-fit:contain;object-position:center}
+.certificate>span:first-child{display:flex;align-items:center;justify-content:center;width:48px;min-height:48px}
+@media(min-width:651px){.certificate{grid-template-columns:48px minmax(0,1fr) 170px}}
+@media(max-width:650px){.certificate{grid-template-columns:32px minmax(0,1fr)}.certificate-badge{width:32px;height:32px}.certificate>span:first-child{width:32px;min-height:32px}}
