@@ -41,11 +41,11 @@ export const certificates=[
   ['AI & Data','Data Analytics Essentials','Cisco','March 2026'],
   ['Cloud & Security','AWS Academy Graduate — Cloud Foundations Training Badge','AWS Academy','March 2026'],
   ['Cloud & Security','Endpoint Security','Cisco','August 2025'],
-  ['Cloud & Security','Cyber Threat Management','Cisco',null],
+  ['Cloud & Security','Cyber Threat Management','Cisco','November 20, 2025'],
   ['IT Fundamentals','CompTIA IT Fundamentals+ (ITF+) Certification','CompTIA','November 2023'],
 ];
 // Public badges matched by their issuer-provided titles and recipient names.
-// Cyber Threat Management has no supplied issue date; none is inferred.
+// Cyber Threat Management's issue date is verified from Credly's public badge metadata.
 export const certificateEvidence={
   'Work with Components in Figma':{url:'https://www.coursera.org/account/accomplishments/verify/25W7WW8QQI3B',provider:'Coursera'},
   'Relational Database V8':{url:'https://www.freecodecamp.org/certification/fcc6e66bdab-1c12-4b36-8525-1bcfcd71c947/relational-database-v8',provider:'freeCodeCamp'},
