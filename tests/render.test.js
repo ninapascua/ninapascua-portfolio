@@ -19,6 +19,7 @@ test('React renders all portfolio sections, six project entries, and the full cr
     assert.ok(html.includes('CompTIA IT Fundamentals+'));
     assert.ok(html.includes('Director for Community Development'));
     assert.ok(html.includes('aria-label="Filter projects"'));
+    assert.ok(html.includes('View case study'));
     assert.equal((html.match(/class="certificate"/g) || []).length, 11);
     assert.equal((html.match(/Verify on Credly/g) || []).length, 8);
     assert.equal((html.match(/Verify on Coursera/g) || []).length, 1);

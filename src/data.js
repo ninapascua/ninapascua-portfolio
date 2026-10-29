@@ -5,6 +5,7 @@ export const repositoryOrder=[
   'RandelYumul/Truth_in_Tales',
   'cinemaseven/eLingkod',
   'ninapascua/floralia',
+  'Bake & Co.',
 ];
 export const projectMedia={
   'AniMedika':[

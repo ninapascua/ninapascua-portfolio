@@ -11,7 +11,7 @@ const repositories = [
 
 test('portfolio order preserves the requested sequence, including after filtering', () => {
   const archive = [...repositoryOrder].reverse().map((full_name, index) => ({
-    full_name, name: full_name.split('/')[1], language: index % 2 ? 'JavaScript' : null,
+    full_name, name: full_name.split('/').at(-1), language: index % 2 ? 'JavaScript' : null,
   }));
   const ordered = selectRepositories(archive, { sort: 'featured', order: repositoryOrder });
   assert.deepEqual(ordered.map(repo => repo.full_name), repositoryOrder);

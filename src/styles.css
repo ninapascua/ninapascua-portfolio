@@ -126,3 +126,5 @@
 @media(max-width:650px){.certificate{grid-template-columns:24px minmax(0,1fr);column-gap:20px}}
 
 .certificate .credential-link{font:500 12px/1.5 'DM Sans',sans-serif;letter-spacing:0}
+
+.repo-card.showcase-card:before{content:"PORTFOLIO / PROJECT FILE"}
