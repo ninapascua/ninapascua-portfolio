@@ -90,7 +90,8 @@ export const projectMedia = {
   ],
 };
 
-// Project summaries are based on the supplied brief and linked public READMEs.
+// Roles follow the CV and credited work; features follow public repositories.
+// Bake & Co. screen coverage is based on the supplied design board.
 export const projects = [
   {
     name: "AniMedika",
@@ -106,9 +107,10 @@ export const projects = [
       "Collaborated on the browser-based identification system.",
     ],
     features: [
-      "Image-based classification",
-      "Disease information and key signs",
-      "English and Filipino guidance",
+      "Rice leaf image upload and mobile camera capture",
+      "Classification across six supported leaf conditions",
+      "Disease details, key signs, and English/Filipino recommendations",
+      "Wet- or dry-season notes based on the selected image date",
     ],
     tech: [
       "Python",
@@ -137,10 +139,11 @@ export const projects = [
       "Integrated authentication and a monthly photographic scrapbook.",
     ],
     features: [
-      "Drink reviews and tasting notes",
-      "Searchable café records",
-      "Monthly photo scrapbook",
-      "Private authentication",
+      "Café and drink entries with photos, prices, ratings, and tasting notes",
+      "Search by café or drink name and filter by matcha or hojicha",
+      "Add, edit, and delete journal entries",
+      "Current-month photo scrapbook with a shuffle control",
+      "Owner sign-in for private journal records",
     ],
     tech: [
       "React",
@@ -168,10 +171,10 @@ export const projects = [
       "Developed identification-number validation and integrated backend verification services.",
     ],
     features: [
-      "Resident registration",
-      "Camera-based ID scanning",
-      "OCR and image quality checks",
-      "Backend verification",
+      "Resident registration and profile management",
+      "Camera-based ID capture with blur and exposure checks",
+      "OCR text extraction and identification-number matching",
+      "Backend verification and storage of registration documents",
     ],
     tech: ["Flutter", "Dart", "Python", "FastAPI", "Supabase", "Google ML Kit"],
     note: "Making community services closer.",
@@ -186,14 +189,15 @@ export const projects = [
     description:
       "A collaborative creative writing website presenting essays, personal reflections, and stories. Built with HTML, CSS, and JavaScript, it emphasizes readable typography, responsive layouts, and straightforward navigation between Home, Blog, and About Us.",
     role: [
-      "Collaborated with a six-member team.",
-      "Designed intuitive layouts and navigation.",
-      "Worked on typography, reader-friendly compositions, and responsive design.",
+      "Contributed UI/frontend design as part of a six-member team.",
+      "Designed layouts, typography, and navigation for reading across devices.",
+      "Authored “Burnout Is the New Broken Wing: Why We're Still Expected to Fly.”",
     ],
     features: [
-      "Creative writing and reflections",
-      "Reader-friendly typography",
-      "Responsive layouts",
+      "A collection of essays, personal reflections, and stories",
+      "Individual article pages with author credits",
+      "Home, Blog, and About Us navigation",
+      "Responsive reading layouts",
     ],
     tech: ["HTML", "CSS", "JavaScript"],
     note: "A place for stories to unfold.",
@@ -207,13 +211,14 @@ export const projects = [
       "A Flutter mobile application for browsing bakery products through an organized, user-friendly interface.",
     role: [
       "Developed mobile UI components and product displays.",
-      "Created custom visual elements and reusable Flutter widgets.",
-      "Contributed design and backend-related work.",
+      "Created custom visual elements for the mobile interface.",
+      "Applied reusable Flutter widgets to keep the interface consistent.",
     ],
     features: [
-      "Bakery product browsing",
-      "Organized product displays",
-      "Reusable interface components",
+      "Product browsing and product-detail interfaces",
+      "Favorites and customer-review screens",
+      "Cart, delivery checkout, and order-confirmation screen designs",
+      "Sign-in, registration, and profile interfaces",
     ],
     tech: ["Flutter", "Dart"],
     note: "Thoughtfully made, down to the crumbs.",
@@ -227,15 +232,15 @@ export const projects = [
     description:
       "A responsive floral workshop website introducing the studio, membership benefits, and beginner-to-advanced classes. Built with HTML, CSS, and JavaScript, with captioned video and membership registration through Google Forms.",
     role: [
-      "Designed and developed a responsive website.",
+      "Designed and developed the responsive floral workshop website.",
       "Created visual layouts, typography, and floral-inspired elements.",
-      "Contributed the article “Burnout Is the New Broken Wing: Why We’re Still Expected to Fly.”",
+      "Implemented mobile navigation, captioned video, and links to membership registration.",
     ],
     features: [
-      "Workshop and class information",
-      "Membership information",
-      "Editorial content",
-      "Responsive compositions",
+      "Beginner, intermediate, and advanced workshop comparisons",
+      "Membership benefits and external Google Forms registration",
+      "Studio introduction with a captioned promotional video",
+      "Section navigation with a collapsible mobile menu",
     ],
     tech: ["HTML", "CSS", "JavaScript"],
     note: "Good ideas deserve room to bloom.",
