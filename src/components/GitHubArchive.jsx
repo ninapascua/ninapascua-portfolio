@@ -6,7 +6,6 @@ import { Chips } from './Common.jsx';
 
 function RepositoryCard({ repository: repo, index }) {
   return <article className={`repo-card${repo.collaborative ? ' collaborative' : ''}`}><span className="meta">{String(index + 1).padStart(2, '0')} / {repo.collaborative ? `TEAM PROJECT · ${repo.full_name.split('/')[0]}` : repo.language || 'Unspecified language'}</span><h3>{repo.name}</h3><p>{repo.description || 'No description provided.'}</p><Chips items={(repo.topics || []).slice(0, 5)} />
-    {!repo.curated && <div className="meta">★ {repo.stargazers_count} · FORKS {repo.forks_count}<br />UPDATED {new Date(repo.updated_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
     <a href={safeUrl(repo.html_url)} target="_blank" rel="noreferrer">View repository ↗</a>{repo.homepage && <a href={safeUrl(repo.homepage)} target="_blank" rel="noreferrer">Website ↗</a>}
   </article>;
 }
