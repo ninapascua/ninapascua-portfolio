@@ -1,3 +1,4 @@
+import Icon from "./Icon.jsx";
 import { useState } from "react";
 import { projects } from "../data.js";
 import { Tabs, Chips, ProjectMedia, ProjectActions } from "./Common.jsx";
@@ -67,7 +68,7 @@ export default function Projects({ onOpenCase }) {
                 className="button red"
                 onClick={() => onOpenCase(project)}
               >
-                Open case study ↗
+                Open case study <Icon name="external" />
               </button>
               <ProjectActions project={project} />
             </div>
@@ -87,7 +88,7 @@ export default function Projects({ onOpenCase }) {
           onClick={() => selectProject(index - 1)}
           aria-label="Previous project"
         >
-          ← Previous file
+          <Icon name="left" /> Previous file
         </button>
         <div id="project-index">
           {number(index + 1)} / {number(list.length)}
@@ -96,7 +97,7 @@ export default function Projects({ onOpenCase }) {
           onClick={() => selectProject(index + 1)}
           aria-label="Next project"
         >
-          Next file →
+          Next file <Icon name="right" />
         </button>
       </div>
       <div id="project-shelf">

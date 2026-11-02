@@ -1,3 +1,4 @@
+import Icon from "./Icon.jsx";
 import { useState } from "react";
 import { certificates, certificateEvidence } from "../data.js";
 import { assetUrl } from "../utils.js";
@@ -53,7 +54,7 @@ export default function Certifications() {
                     rel="noreferrer"
                     aria-label={`Verify ${name} on ${evidence.provider || "Credly"}`}
                   >
-                    Verify on {evidence.provider || "Credly"} ↗
+                    Verify on {evidence.provider || "Credly"} <Icon name="external" />
                   </a>
                 </small>
               </article>

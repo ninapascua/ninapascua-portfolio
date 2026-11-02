@@ -1,3 +1,4 @@
+import Icon from "./Icon.jsx";
 import { useEffect, useRef, useState } from "react";
 import { assetUrl } from "../utils.js";
 
@@ -37,12 +38,12 @@ export function ProjectActions({ project }) {
           target="_blank"
           rel="noreferrer"
         >
-          Repository ↗
+          Repository <Icon name="external" />
         </a>
       )}
       {project.live && (
         <a href={project.live} target="_blank" rel="noreferrer">
-          {project.liveLabel || "Visit website ↗"}
+          {project.liveLabel || "Visit website"} <Icon name="external" />
         </a>
       )}
     </>
@@ -122,11 +123,11 @@ export function ProjectMedia({ project, index, onChange }) {
         {project.media.length > 1 && (
           <span className="gallery-buttons">
             <button onClick={() => move(-1)} aria-label="Previous screenshot">
-              ←
+              <Icon name="left" />
             </button>{" "}
             {index + 1} / {project.media.length}
             <button onClick={() => move(1)} aria-label="Next screenshot">
-              →
+              <Icon name="right" />
             </button>
           </span>
         )}
@@ -169,7 +170,7 @@ export function Modal({ titleId, children, onClose }) {
       onClick={closeOnBackdrop}
     >
       <button id="close-dialog" onClick={onClose} aria-label="Close dialog">
-        Close ×
+        Close <Icon name="close" />
       </button>
       <div id="dialog-content">{children}</div>
     </dialog>

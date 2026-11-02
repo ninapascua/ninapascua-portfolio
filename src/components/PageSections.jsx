@@ -1,3 +1,4 @@
+import Icon from "./Icon.jsx";
 import { profile, leadership } from "../data.js";
 import { assetUrl } from "../utils.js";
 
@@ -24,7 +25,7 @@ export function Hero() {
     <section id="home" className="hero">
       <div className="issue">
         <span>VOL. 01 / PERSONAL PORTFOLIO</span>
-        <span>PAMPANGA, PHILIPPINES ↗</span>
+        <span>PAMPANGA, PHILIPPINES <Icon name="external" /></span>
       </div>
       <div className="hero-layout">
         <div className="hero-copy">
@@ -32,7 +33,7 @@ export function Hero() {
             Niña
             <br />
             <em>
-              Pascua<span>✳</span>
+              Pascua<span><Icon name="asterisk" /></span>
             </em>
           </h1>
           <div className="hero-bottom">
@@ -41,7 +42,7 @@ export function Hero() {
               design and a little curiosity into useful digital experiences.
             </p>
             <a className="button red" href="#projects">
-              Explore my projects <span>↗</span>
+              Explore my projects <span><Icon name="external" /></span>
             </a>
             <div className="small-links">
               <a
@@ -49,14 +50,14 @@ export function Hero() {
                 href={assetUrl(profile.cv)}
                 download="Nina-Pascua-CV.pdf"
               >
-                Download CV ↓
+                Download CV <Icon name="down" />
               </a>
               <a
                 href="https://github.com/ninapascua"
                 target="_blank"
                 rel="noreferrer"
               >
-                View GitHub ↗
+                View GitHub <Icon name="external" />
               </a>
             </div>
           </div>
@@ -74,7 +75,7 @@ export function Hero() {
           <div className="round-stamp">
             <span>
               DESIGNER MIND
-              <br />✳<br />
+              <br /><Icon name="asterisk" /><br />
               DEVELOPER HEART
             </span>
           </div>
@@ -83,11 +84,11 @@ export function Hero() {
       </div>
       <div className="hero-footer">
         <span>UI/UX DESIGN</span>
-        <b>✳</b>
+        <b><Icon name="asterisk" /></b>
         <span>SOFTWARE DEVELOPMENT</span>
-        <b>✳</b>
+        <b><Icon name="asterisk" /></b>
         <span>AI & MACHINE LEARNING</span>
-        <a href="#about">SCROLL TO EXPLORE ↓</a>
+        <a href="#about">SCROLL TO EXPLORE <Icon name="down" /></a>
       </div>
     </section>
   );
@@ -99,7 +100,7 @@ export function About({ onCv }) {
       <div className="about-label">
         <div className="section-label">01 / THE PERSON</div>
         <button className="text-button cv" onClick={onCv}>
-          View my CV ↗
+          View my CV <Icon name="external" />
         </button>
       </div>
       <div>
@@ -237,25 +238,25 @@ export function Contact({ onCv }) {
         <div className="postcard-address">
           <div className="postage">
             NP
-            <br />✳<br />
+            <br /><Icon name="asterisk" /><br />
             PHILIPPINES
           </div>
           <p>TO: MY NEXT TEAM</p>
-          <a href="mailto:ninapascua88@gmail.com">ninapascua88@gmail.com ↗</a>
+          <a href="mailto:ninapascua88@gmail.com">ninapascua88@gmail.com <Icon name="external" /></a>
           <a
             href="https://github.com/ninapascua"
             target="_blank"
             rel="noreferrer"
           >
-            github.com/ninapascua ↗
+            github.com/ninapascua <Icon name="external" />
           </a>
           {profile.linkedin && (
             <a href={profile.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn ↗
+              LinkedIn <Icon name="external" />
             </a>
           )}
           <button className="text-button cv" onClick={onCv}>
-            View / download CV ↗
+            View / download CV <Icon name="external" />
           </button>
           <span className="meta">Pampanga, Philippines</span>
         </div>

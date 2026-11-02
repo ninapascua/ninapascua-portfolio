@@ -1,3 +1,4 @@
+import Icon from "./Icon.jsx";
 import { profile } from "../data.js";
 import { assetUrl } from "../utils.js";
 
@@ -9,10 +10,10 @@ export default function CvDocument() {
       <h2 id="modal-title">Curriculum vitae</h2>
       <div className="project-actions">
         <a className="button red" href={url} download="Nina-Pascua-CV.pdf">
-          Download CV ↓
+          Download CV <Icon name="down" />
         </a>
         <a href={url} target="_blank" rel="noreferrer">
-          Open PDF ↗
+          Open PDF <Icon name="external" />
         </a>
       </div>
       <iframe

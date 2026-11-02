@@ -1,3 +1,4 @@
+import Icon from "./components/Icon.jsx";
 import { useState } from "react";
 import { skills } from "./data.js";
 import { Hero, About, Journey, Contact } from "./components/PageSections.jsx";
@@ -12,7 +13,7 @@ function Header() {
   return (
     <header>
       <a className="brand" href="#home">
-        np<span>✳</span>
+        np<span><Icon name="asterisk" /></span>
       </a>
       <span className="edition">PERSONAL ARCHIVE</span>
       <button
@@ -21,7 +22,7 @@ function Header() {
         aria-controls="nav"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        Menu {menuOpen ? "−" : "+"}
+        Menu <Icon name={menuOpen ? "minus" : "plus"} />
       </button>
       <nav
         id="nav"
@@ -37,7 +38,7 @@ function Header() {
         <a href="#skills">The toolkit</a>
         <a href="#journey">The journey</a>
         <a className="nav-contact" href="#contact">
-          Say hello ↗
+          Say hello <Icon name="external" />
         </a>
       </nav>
     </header>
@@ -89,12 +90,12 @@ export default function App() {
       </main>
       <footer>
         <a className="brand" href="#home">
-          np<span>✳</span>
+          np<span><Icon name="asterisk" /></span>
         </a>
         <span>
           © <span id="year">{new Date().getFullYear()}</span> NIÑA PASCUA
         </span>
-        <a href="#home">BACK TO TOP ↑</a>
+        <a href="#home">BACK TO TOP <Icon name="up" /></a>
       </footer>
       {modal && (
         <Modal titleId="modal-title" onClose={() => setModal(null)}>
