@@ -1,8 +1,6 @@
-﻿# np✳ / Niña Pascua
+﻿# np* / Niña Pascua
 
-**Live site:** Add your live site link here.
-
-![A little creative. A little technical.](docs/readme-cover.svg)
+**Live site:** 
 
 My little corner of the web: a collection of projects, things I've learned, and ideas I've brought to life through design and code.
 
