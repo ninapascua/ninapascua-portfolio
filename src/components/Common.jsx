@@ -49,6 +49,60 @@ export function ProjectActions({ project }) {
   );
 }
 
+function GalleryImage({ image, onError }) {
+  const [displayed, setDisplayed] = useState(image);
+  const [outgoing, setOutgoing] = useState(null);
+
+  useEffect(() => {
+    if (image.src === displayed.src) return;
+    let cancelled = false;
+    const preload = new Image();
+    preload.onload = () => {
+      if (cancelled) return;
+      setOutgoing(displayed);
+      setDisplayed(image);
+    };
+    preload.onerror = () => {
+      if (!cancelled) onError(image.src);
+    };
+    preload.src = assetUrl(image.src);
+    return () => {
+      cancelled = true;
+    };
+  }, [image, displayed.src, onError]);
+
+  useEffect(() => {
+    if (!outgoing) return;
+    const timer = window.setTimeout(() => setOutgoing(null), 420);
+    return () => window.clearTimeout(timer);
+  }, [outgoing]);
+
+  return (
+    <div className="gallery-image">
+      <img
+        key={displayed.src}
+        className={outgoing ? "gallery-incoming" : undefined}
+        src={assetUrl(displayed.src)}
+        alt={displayed.alt}
+        width={displayed.width}
+        height={displayed.height}
+        loading="lazy"
+        onError={() => onError(displayed.src)}
+      />
+      {outgoing && (
+        <img
+          className="gallery-outgoing"
+          src={assetUrl(outgoing.src)}
+          alt=""
+          aria-hidden="true"
+          width={outgoing.width}
+          height={outgoing.height}
+        />
+      )}
+    </div>
+  );
+}
+
 export function ProjectMedia({ project, index, onChange }) {
   const [failedSource, setFailedSource] = useState(null);
   const image = project.media[index];
@@ -57,14 +111,7 @@ export function ProjectMedia({ project, index, onChange }) {
   return (
     <div className="media-board">
       {image && failedSource !== image.src ? (
-        <img
-          src={assetUrl(image.src)}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
-          loading="lazy"
-          onError={() => setFailedSource(image.src)}
-        />
+        <GalleryImage image={image} onError={setFailedSource} />
       ) : (
         <p className="media-unavailable" role="status">
           This project image could not load.

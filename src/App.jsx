@@ -5,6 +5,7 @@ import { Chips, Modal } from "./components/Common.jsx";
 import Projects, { CaseStudy } from "./components/Projects.jsx";
 import Certifications from "./components/Certifications.jsx";
 import CvDocument from "./components/CvDocument.jsx";
+import useScrollReveal from "./useScrollReveal.js";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ function Header() {
       <a className="brand" href="#home">
         np<span>✳</span>
       </a>
-      <span className="edition">THE PERSONAL ARCHIVE</span>
+      <span className="edition">PERSONAL ARCHIVE</span>
       <button
         id="menu"
         aria-expanded={menuOpen}
@@ -64,6 +65,7 @@ function Skills() {
 }
 
 export default function App() {
+  const mainRef = useScrollReveal();
   const [modal, setModal] = useState(null);
   function openCv() {
     setModal({ type: "cv" });
@@ -74,7 +76,7 @@ export default function App() {
         Skip to content
       </a>
       <Header />
-      <main id="main">
+      <main id="main" ref={mainRef}>
         <Hero />
         <About onCv={openCv} />
         <Projects

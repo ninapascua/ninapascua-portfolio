@@ -1,50 +1,100 @@
-# Portfolio — Niña Pascua
+﻿# np✳ / Niña Pascua
 
-A React + Vite portfolio with six project showcases, a personal portrait, CV viewing and downloading, skills, education, leadership, awards, eleven credential links, and contact details.
+**Live site:** Add your live site link here.
 
-## Run locally
+![A little creative. A little technical.](docs/readme-cover.svg)
 
-Use Node.js 22.12+ or a newer supported LTS release. In PowerShell:
+My little corner of the web: a collection of projects, things I've learned, and ideas I've brought to life through design and code.
 
-```powershell
-cd C:\Users\PC\Desktop\portfolio
-npm.cmd ci
-npm.cmd run dev
+
+## Features
+
+| Inside the archive | What you'll find |
+| --- | --- |
+| Selected work | Six projects, category filters, case studies, and screenshot galleries |
+| The person | A little about me, my education, leadership, and awards |
+| The toolkit | Skills, technologies, and certification verification links |
+| Say hello | Contact details, social links, and a viewable/downloadable CV |
+
+The small details matter too: responsive layouts, keyboard navigation, gentle entrance and scroll animations, and a transparent favicon that adapts to dark mode. Animations respect reduced-motion preferences.
+
+## Tech stack
+
+**React 19** · **JavaScript** · **CSS** · **Vite 8**
+
+Static site, no backend or environment variables to configure.
+
+## Getting started
+
+You'll need **Node.js 22.12+** and **npm**. Clone or download this repository, then open a terminal in the project folder:
+
+```sh
+npm ci
+npm run dev
 ```
 
-Open the URL printed by Vite (normally http://127.0.0.1:5173). Press Ctrl+C to stop. `npm.cmd` avoids PowerShell script execution policy restrictions. After changing package.json dependencies, use `npm.cmd install` to update the lockfile.
+Open the URL printed in the terminal, normally `http://127.0.0.1:5173`. Stop the server with `Ctrl+C`.
 
-```powershell
-npm.cmd test
-npm.cmd run build
-npm.cmd run preview
+On Windows PowerShell, use `npm.cmd` if `npm` is blocked by the execution policy.
+
+## Available scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm test` | Check content, assets, and page rendering |
+| `npm run build` | Create the production site in `dist/` |
+| `npm run preview` | Preview the production build locally |
+
+## Project structure
+
+```text
+public/
+  assets/               Photos, screenshots, badges, and CV
+  favicon.svg           Adaptive favicon
+src/
+  components/           Page sections and shared components
+  App.jsx               Page layout, navigation, and dialogs
+  data.js               Portfolio content
+  main.jsx              React entry point
+  styles.css            Styles and responsive layouts
+  useScrollReveal.js    Scroll reveal behavior
+  utils.js              Asset URL helper
+docs/                   README artwork
+tests/                  Content, asset, and rendering checks
+index.html              Page metadata and favicon link
+vite.config.js          Development and build configuration
 ```
 
-Deploy the generated `dist/` directory to static hosting. Use `npm run build` as the build command. The relative Vite base supports subdirectory hosting. Do not edit files in `dist/`: the next build replaces them.
+## Updating the portfolio
 
-## Architecture
+- Edit `src/data.js` to update projects, skills, credentials, leadership, and profile asset paths.
+- Edit `src/components/PageSections.jsx` for the introduction, biography, education, and contact details.
+- Add images and the CV to `public/assets/`; reference them using paths relative to `public/`.
+- Adjust colors, typography, and animations in `src/styles.css`.
+- Update the title and description in `index.html`, and the live site link at the top of this README.
 
-- `src/main.jsx`: React entry point and global stylesheet.
-- `src/App.jsx`: page composition, navigation, and active dialog state.
-- `src/components/PageSections.jsx`: Home, About, education/involvement, and Contact.
-- `src/components/Projects.jsx`: category filters, project selection, and case-study content.
-- `src/components/Common.jsx`: tabs, technology labels, project actions, media galleries, and accessible native dialogs.
-- `src/components/CvDocument.jsx`: PDF viewer and download/open links.
-- `src/components/Certifications.jsx`: credential category filters, icons, and provider verification links.
-- `src/data.js`: profile, projects/media, skills, certifications, evidence, and leadership content.
-- `src/utils.js`: deployment-relative asset URLs.
-- `src/styles.css`: base component styles followed by consolidated responsive breakpoints and reduced-motion rules.
-- `public/assets/`: original CV, portrait, project media, badge artwork, and provider logos.
-- `tests/`: content/asset integrity and complete-page rendering checks.
+Run `npm test` after content changes to check required assets, credential data, page rendering, and internal anchors.
 
-The Code Archive section and its GitHub fetching/caching logic were removed at the owner's request. GitHub links remain attached to the relevant projects and profile. The site needs no backend, environment variables, API keys, or login. Google Fonts is the only runtime resource fetched automatically from another site; verification links and project deployments open only when visitors select them.
+## Deployment
 
-## Updating content and assets
+```sh
+npm run build
+npm run preview
+```
 
-Edit `src/data.js`. Profile paths are relative to `public/`, for example `assets/portrait/photo.jpg`. Keep original uploads in `public/assets/`, never in `dist/`.
+Deploy to a static host with these settings:
 
-Each `projectMedia` entry has a local image path, meaningful alt text, width, height, and an optional caption. Keep width/height equal to the source image's dimensions; CSS scales images proportionally. All six projects currently have media. eLingkod's presentation slides and Bake & Co.'s design board are labeled as those media types.
+| Setting | Value |
+| --- | --- |
+| Install command | `npm ci` |
+| Build command | `npm run build` |
+| Publish directory | `dist` |
 
-Certification evidence stores a verification URL and an icon path. Eight entries use original Credly badge artwork. Coursera and the two freeCodeCamp entries use official provider logos. The AWS and CompTIA icons have a small CSS scale adjustment to compensate for padding in their original artwork. All icons use the same 24px frame.
+The build uses relative asset paths to support subdirectory hosting. Make source changes outside `dist/`, since each build regenerates that directory.
 
-Tests reject missing/empty assets, incomplete project data, missing credential dates or verification links, invalid badge images, broken internal anchors, and obsolete placeholder text. Bake & Co. has no supplied public repository, so no repository link is fabricated. Certificate PDFs, additional demo videos, and more screenshots may be added later but are not required for the current site.
+## Author
+
+Made by **Niña Pascua** · [GitHub](https://github.com/ninapascua)
+
+*Always learning. Always making.*

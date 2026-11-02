@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="260" viewBox="0 0 1100 260" role="img" aria-labelledby="title desc">
+  <title id="title">A little creative. A little technical.</title>
+  <desc id="desc">Cream paper, burgundy lettering, a tilted blue card, and an asterisk matching Niña Pascua's portfolio.</desc>
+  <rect width="1100" height="260" rx="8" fill="#f9f4f0" />
+  <path d="M40 44H1060M40 218H1060" stroke="#4f0101" stroke-opacity=".18" />
+  <g fill="#bc0000" font-family="monospace" font-size="11" letter-spacing="2">
+    <text x="42" y="29">VOL. 01 / PERSONAL ARCHIVE</text>
+    <text x="830" y="29">DESIGN + DEVELOPMENT</text>
+  </g>
+  <g fill="#4f0101" font-family="Georgia, 'Times New Roman', serif" font-size="56">
+    <text x="42" y="115">A little creative.</text>
+    <text x="42" y="179" font-style="italic">A little technical.</text>
+  </g>
+  <g transform="translate(845 130) rotate(7)">
+    <rect x="-99" y="-65" width="198" height="130" fill="#6082a7" />
+    <text x="-57" y="35" fill="#f9f4f0" font-family="Georgia, 'Times New Roman', serif" font-size="100" font-style="italic" letter-spacing="-10">np</text>
+    <g transform="translate(62 -22)" stroke="#f9f4f0" stroke-width="4">
+      <path d="M-15 0H15M0-15V15M-10.6-10.6 10.6 10.6M-10.6 10.6 10.6-10.6" />
+    </g>
+  </g>
+  <g fill="#4f0101" font-family="monospace" font-size="10" letter-spacing="1.4">
+    <text x="42" y="242">UI/UX DESIGN · SOFTWARE DEVELOPMENT · AI/ML</text>
+    <text x="835" y="242">PAMPANGA, PHILIPPINES</text>
+  </g>
+</svg>

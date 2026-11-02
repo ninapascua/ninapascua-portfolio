@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .initials { fill: #4f0101; }
+    .star { stroke: #bc0000; }
+    @media (prefers-color-scheme: dark) {
+      .initials { fill: #f9f4f0; }
+      .star { stroke: #ff9999; }
+    }
+  </style>
+  <text class="initials" x="4" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-style="italic" letter-spacing="-5">np</text>
+  <g class="star" transform="translate(54 24)" stroke-width="2.8">
+    <path d="M-8 0H8M0-8V8M-5.7-5.7 5.7 5.7M-5.7 5.7 5.7-5.7" />
+  </g>
+</svg>

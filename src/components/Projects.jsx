@@ -15,11 +15,13 @@ export default function Projects({ onOpenCase }) {
   const [filter, setFilter] = useState("All Projects");
   const [index, setIndex] = useState(0);
   const [gallery, setGallery] = useState(0);
+  const [direction, setDirection] = useState(1);
   const list = projects.filter(
     (project) => filter === "All Projects" || project.category.includes(filter),
   );
   const project = list[index];
   function selectProject(next) {
+    setDirection(next < index ? -1 : 1);
     setIndex((next + list.length) % list.length);
     setGallery(0);
   }
@@ -43,13 +45,14 @@ export default function Projects({ onOpenCase }) {
         items={categories}
         active={filter}
         onChange={(value) => {
+          setDirection(1);
           setFilter(value);
           setIndex(0);
           setGallery(0);
         }}
       />
-      <div id="showcase" aria-live="polite">
-        <article className="project-spread">
+      <div id="showcase" aria-live="polite" style={{ "--project-direction": direction }}>
+        <article className="project-spread" key={project.name}>
           <div className="project-copy">
             <span className="project-number">
               FILE {number(projects.indexOf(project) + 1)} /{" "}

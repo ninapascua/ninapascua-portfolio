@@ -267,10 +267,6 @@ p {
   transition: transform 0.3s;
 }
 
-.portrait:hover {
-  transform: rotate(-5deg) translateY(-5px);
-}
-
 .portrait-inner {
   height: 280px;
   background: var(--beige);
@@ -1781,7 +1777,167 @@ dialog .project-actions {
   }
 }
 
+/* Paper-like motion uses translate separately to preserve each piece's tilt. */
+@keyframes hero-reveal {
+  from { opacity: 0; translate: 0 var(--entrance-distance, 10px); }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes paper-settle {
+  from {
+    opacity: 0;
+    transform: translateY(var(--entrance-distance, 10px))
+      rotate(calc(var(--paper-angle) + var(--settle-angle)));
+  }
+  to { opacity: 1; transform: translateY(0) rotate(var(--paper-angle)); }
+}
+
+.hero-copy > h1 {
+  animation: hero-reveal 600ms cubic-bezier(.2, .7, .2, 1) backwards;
+}
+
+.hero-bottom {
+  animation: hero-reveal 620ms cubic-bezier(.2, .7, .2, 1) 160ms backwards;
+}
+
+/* Keyboard users can reach the introductory links immediately. */
+.hero-bottom:focus-within {
+  animation: none;
+}
+
+.hero-art .round-stamp, .hero-art .tape {
+  --entrance-distance: 4px;
+  animation: hero-reveal 600ms cubic-bezier(.2, .7, .2, 1) 480ms backwards;
+}
+
+@keyframes paper-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 calc(-1 * var(--float-distance, 8px)); }
+}
+
+@keyframes project-arrive {
+  from { opacity: 0; translate: calc(var(--project-direction, 1) * 18px) 0; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes image-arrive {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes image-depart {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.portrait {
+  --paper-angle: -9deg;
+  --settle-angle: -2deg;
+  animation: paper-settle 760ms cubic-bezier(.2, .7, .2, 1) 420ms backwards;
+}
+
+.blue-paper {
+  --paper-angle: 7deg;
+  --settle-angle: 2deg;
+  --float-distance: 5px;
+  animation: paper-settle 760ms cubic-bezier(.2, .7, .2, 1) 340ms backwards,
+    paper-float 8.5s ease-in-out 1100ms infinite;
+}
+
+.scroll-reveal {
+  transition: opacity 600ms ease var(--reveal-delay, 0ms),
+    translate 600ms cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal-pending {
+  opacity: 0;
+  translate: 0 18px;
+}
+
+.project-spread {
+  animation: project-arrive 360ms cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.gallery-image {
+  display: grid;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--paper);
+}
+
+.gallery-image > img {
+  grid-area: 1 / 1;
+  align-self: start;
+  min-width: 0;
+}
+
+.gallery-image .gallery-incoming {
+  animation: image-arrive 400ms ease both;
+}
+
+.gallery-image .gallery-outgoing {
+  pointer-events: none;
+  animation: image-depart 400ms ease both;
+}
+
+.media-board {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.button span, .link-arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.nav-contact, .tabs button, #project-shelf button,
+.gallery-buttons button, .chips span, .work-nav button {
+  transition: transform 200ms ease, color 200ms ease,
+    background-color 200ms ease, border-color 200ms ease;
+}
+
+nav a:not(.nav-contact), .small-links a, .postcard-address a {
+  text-decoration-color: transparent;
+  text-underline-offset: 5px;
+  transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.button:focus-visible span {
+  transform: translate(3px, -3px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait:hover {
+    transform: rotate(-5deg) translateY(-5px);
+  }
+  .media-board:hover, .media-board:focus-within {
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 5px 10px 0 #4f010112;
+  }
+  .button:hover span, a:hover > .link-arrow, button:hover > .link-arrow {
+    transform: translate(3px, -3px);
+  }
+  .nav-contact:hover, .tabs button:hover, #project-shelf button:hover,
+  .gallery-buttons button:hover, .work-nav button:hover {
+    transform: translateY(-2px);
+  }
+  .chips span:hover { transform: translateY(-2px); }
+  nav a:not(.nav-contact):hover, .small-links a:hover, .postcard-address a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero { --entrance-distance: 6px; }
+  .blue-paper { --float-distance: 3px; }
+  .reveal-pending { translate: 0 10px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reveal-pending {
+    opacity: 1;
+    translate: none;
+  }
+  .gallery-image .gallery-outgoing { display: none; }
   html {
     scroll-behavior: auto;
   }
