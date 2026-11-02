@@ -1,6 +1,6 @@
 ﻿# np* / Niña Pascua
 
-**Live site:** 
+**Live site:**  https://ninapascua.github.io/ninapascua-portfolio/
 
 My little corner of the web: a collection of projects, things I've learned, and ideas I've brought to life through design and code.
 
