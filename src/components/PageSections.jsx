@@ -71,15 +71,15 @@ export function Hero() {
             <div className="hand portrait-caption">
               a little creative, a little technical.
             </div>
+            <div className="tape" aria-hidden="true"></div>
+            <div className="round-stamp">
+              <span>
+                DESIGNER MIND
+                <br /><Icon name="asterisk" /><br />
+                DEVELOPER HEART
+              </span>
+            </div>
           </div>
-          <div className="round-stamp">
-            <span>
-              DESIGNER MIND
-              <br /><Icon name="asterisk" /><br />
-              DEVELOPER HEART
-            </span>
-          </div>
-          <div className="tape"></div>
         </div>
       </div>
       <div className="hero-footer">

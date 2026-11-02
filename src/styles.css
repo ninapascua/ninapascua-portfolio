@@ -300,32 +300,37 @@ p {
 
 .round-stamp {
   position: absolute;
-  right: 0;
-  bottom: 50px;
+  top: -34px;
+  right: -28px;
+  z-index: 2;
   border: 2px solid var(--red);
   outline: 1px solid var(--red);
   outline-offset: -7px;
   border-radius: 50%;
-  height: 127px;
-  width: 127px;
+  height: 88px;
+  width: 88px;
+  background: var(--paper);
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  font: 9px/1.8 monospace;
+  padding: 8px;
+  font: 7px/1.8 monospace;
   color: var(--red);
-  transform: rotate(15deg);
+  transform: rotate(24deg);
 }
 
 .tape {
   position: absolute;
-  top: 105px;
-  left: 24%;
-  width: 100px;
-  height: 34px;
+  top: -12px;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 24px;
+  z-index: 1;
+  pointer-events: none;
   background: #eac692aa;
-  transform: rotate(-20deg);
+  transform: rotate(-8deg);
 }
 
 .hero-footer {
@@ -1515,24 +1520,12 @@ dialog .project-actions {
   }
 
   .round-stamp {
-    position: absolute;
-    border: 2px solid var(--red);
-    outline: 1px solid var(--red);
-    outline-offset: -7px;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font: 9px/1.8 monospace;
-    color: var(--red);
-    transform: rotate(15deg);
-    right: 2%;
-    font-size: 8px;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    bottom: 4px;
+    top: -30px;
+    right: -22px;
+    font-size: 6px;
+    padding: 7px;
+    width: 76px;
+    height: 76px;
   }
 
   .hero-footer {
