@@ -78,8 +78,8 @@ export default function App() {
       </a>
       <Header />
       <main id="main" ref={mainRef}>
-        <Hero />
-        <About onCv={openCv} />
+        <Hero onCv={openCv} />
+        <About />
         <Projects
           onOpenCase={(project) => setModal({ type: "project", project })}
         />

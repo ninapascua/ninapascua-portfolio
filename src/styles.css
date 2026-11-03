@@ -783,25 +783,8 @@ dialog .project-actions {
   margin: 0;
 }
 
-.cv-callout {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-bottom: 2px solid var(--red);
-  background: #eac69220;
-  font-size: 12px;
-  font-weight: 600;
-  transition: background-color 200ms ease, border-color 200ms ease;
-}
-
-.cv-callout:hover,
-.cv-callout:focus-visible {
-  background: #eac69245;
-  border-color: var(--red);
+.about-label .text-button {
+  margin: 0;
 }
 
 .about-columns > p {
@@ -1872,6 +1855,7 @@ dialog .project-actions {
   --paper-angle: 7deg;
   --settle-angle: 2deg;
   --float-distance: 5px;
+  transition: transform 0.3s;
   animation: paper-settle 760ms cubic-bezier(.2, .7, .2, 1) 340ms backwards,
     paper-float 8.5s ease-in-out 1100ms infinite;
 }
@@ -1938,6 +1922,9 @@ nav a:not(.nav-contact), .small-links a, .postcard-address a {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .hero-art:hover .blue-paper {
+    transform: rotate(3deg) translateY(-5px);
+  }
   .portrait:hover {
     transform: rotate(-5deg) translateY(-5px);
   }

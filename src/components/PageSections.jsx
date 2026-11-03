@@ -20,7 +20,7 @@ function Portrait() {
   );
 }
 
-export function Hero() {
+export function Hero({ onCv }) {
   return (
     <section id="home" className="hero">
       <div className="issue">
@@ -41,13 +41,12 @@ export function Hero() {
               Hi, I’m Niña — a Computer Science student turning thoughtful
               design and a little curiosity into useful digital experiences.
             </p>
-            <a
+            <button
               className="button red"
-              href={assetUrl(profile.cv)}
-              download="Nina-Pascua-CV.pdf"
+              onClick={onCv}
             >
-              Download CV <span><Icon name="down" /></span>
-            </a>
+              View my CV <span><Icon name="external" /></span>
+            </button>
             <div className="small-links">
               <a href="#projects">
                 Explore my projects <Icon name="external" />
@@ -94,14 +93,18 @@ export function Hero() {
   );
 }
 
-export function About({ onCv }) {
+export function About() {
   return (
     <section id="about" className="about section">
       <div className="about-label">
         <div className="section-label">01 / THE PERSON</div>
-        <button className="cv-callout" onClick={onCv}>
-          View my CV <Icon name="external" />
-        </button>
+        <a
+          className="text-button cv"
+          href={assetUrl(profile.cv)}
+          download="Nina-Pascua-CV.pdf"
+        >
+          Download CV <Icon name="down" />
+        </a>
       </div>
       <div>
         <h2>
