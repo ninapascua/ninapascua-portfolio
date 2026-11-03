@@ -41,16 +41,16 @@ export function Hero() {
               Hi, I’m Niña — a Computer Science student turning thoughtful
               design and a little curiosity into useful digital experiences.
             </p>
-            <a className="button red" href="#projects">
-              Explore my projects <span><Icon name="external" /></span>
+            <a
+              className="button red"
+              href={assetUrl(profile.cv)}
+              download="Nina-Pascua-CV.pdf"
+            >
+              Download CV <span><Icon name="down" /></span>
             </a>
             <div className="small-links">
-              <a
-                className="cv"
-                href={assetUrl(profile.cv)}
-                download="Nina-Pascua-CV.pdf"
-              >
-                Download CV <Icon name="down" />
+              <a href="#projects">
+                Explore my projects <Icon name="external" />
               </a>
               <a
                 href="https://github.com/ninapascua"
@@ -99,7 +99,7 @@ export function About({ onCv }) {
     <section id="about" className="about section">
       <div className="about-label">
         <div className="section-label">01 / THE PERSON</div>
-        <button className="text-button cv" onClick={onCv}>
+        <button className="cv-callout" onClick={onCv}>
           View my CV <Icon name="external" />
         </button>
       </div>

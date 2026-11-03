@@ -31,7 +31,7 @@ npm ci
 npm run dev
 ```
 
-Open the URL printed in the terminal, normally `http://127.0.0.1:5173`. Stop the server with `Ctrl+C`.
+Open the URL printed in the terminal. Stop the server with `Ctrl+C`.
 
 On Windows PowerShell, use `npm.cmd` if `npm` is blocked by the execution policy.
 
